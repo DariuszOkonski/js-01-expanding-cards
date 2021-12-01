@@ -7,5 +7,96 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 100;
+    letter-spacing: 1.2rem;
+    text-align: center;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 80vh;
+
+    align-self: stretch;
+}
+
+.card {
+    position: relative;
+    min-width: 100px;
+    height: calc(100% - 2rem);
     background-color: yellow;
+    margin: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: .5rem;
+    transition: width 0.7s ease-in;
+    cursor: pointer;
+}
+
+.card.active {
+    transition: width 0.7s ease-in;
+    width: 100%;
+}
+
+
+.card:nth-child(1) {
+    background-image: url('img/clouds-2517653_1280.jpg');
+}
+
+.card:nth-child(2) {
+    background-image: url('img/dubai-1767540_1280.jpg');
+}
+
+.card:nth-child(3) {
+    background-image: url('img/maldives-1993704_1280.jpg');
+}
+
+.card:nth-child(4) {
+    background-image: url('img/pyrenees-351266_1280.jpg');
+}
+
+.card:nth-child(5) {
+    background-image: url('img/tianjin-2185510_1280.jpg');
+}
+
+.description {
+    opacity: 0;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    transition: opacity 0.2s ease-in 0.3s;
+}
+
+.card.active .description {
+    opacity: 1;
+}
+
+@media (max-width: 700px) {
+    .card:nth-child(4),
+    .card:nth-child(5) {
+        display: none;
+    }   
 }
